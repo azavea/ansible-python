@@ -1,0 +1,7 @@
+---
+- name: Install Python
+  apt: pkg=python={{ python_version }} state=present
+
+- name: Install Python development packages
+  apt: pkg=python-dev={{ python_version }} state=present
+  when: python_development | bool
